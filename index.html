@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ReelRatha — Instant Reels, Instant Memories</title>
+  <meta name="description" content="ReelRatha: Instant shoot & same-day reel delivery. Shot on iPhone. Hyderabad-based. Book us for events, weddings, parties & brand shoots." />
+  <meta name="theme-color" content="#000000" />
+
+  <!-- FONTS (system stack for speed) -->
+  <style>
+    :root{
+      --bg:#0a0a0a;
+      --card:#111111;
+      --soft:#181818;
+      --text:#f5f5f5;
+      --muted:#cfcfcf;
+      --gold:#d4af37;
+      --gold-2:#e4c85a;
+      --accent: var(--gold);
+      --radius:16px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
+    img{max-width:100%;display:block}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:var(--maxw);margin-inline:auto;padding:24px}
+    .pill{display:inline-flex;gap:8px;align-items:center;border:1px solid #2a2a2a;padding:6px 12px;border-radius:999px;background:linear-gradient(180deg,#111,#0b0b0b)}
+    .btn{display:inline-block;padding:12px 18px;border-radius:12px;border:1px solid #2c2c2c;background:linear-gradient(180deg,#131313,#0e0e0e);color:var(--text);text-decoration:none;font-weight:600;box-shadow:var(--shadow);transition:.2s transform,.2s box-shadow}
+    .btn:hover{transform:translateY(-2px)}
+    .btn.gold{background:linear-gradient(180deg,var(--gold),var(--gold-2));color:#111;border:none}
+    .btn.ghost{background:transparent;border:1px solid #2c2c2c}
+    header{position:sticky;top:0;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);z-index:30;border-bottom:1px solid #1a1a1a}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{height:40px;width:auto;border-radius:8px;background:#000}
+    .brand .name{font-weight:800;letter-spacing:.5px}
+    .nav a{color:var(--muted);padding:10px 12px;border-radius:10px}
+    .nav a:hover{background:#151515;color:var(--text)}
+    .hero{padding:56px 24px 36px;background:
+      radial-gradient(1200px 500px at 80% -100px, rgba(212,175,55,.06), transparent),
+      radial-gradient(900px 300px at -10% 0, rgba(212,175,55,.06), transparent)}
+    .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+    .card{background:linear-gradient(180deg,#121212,#0c0c0c);border:1px solid #1c1c1c;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero .card{padding:24px}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+    h1{font-size:clamp(28px,5vw,48px);line-height:1.1;margin:6px 0 14px}
+    .lede{color:var(--muted);font-size:1.05rem;margin-bottom:18px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    /* Sections */
+    section{padding:36px 0}
+    section .hdr{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:18px}
+    h2{font-size:clamp(22px,3.8vw,32px);margin:0}
+    .grid{display:grid;gap:18px}
+    .grid.cards{grid-template-columns:repeat(12,1fr)}
+    /* About */
+    .about .points{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .point{padding:16px;border-radius:14px;border:1px solid #1e1e1e;background:linear-gradient(180deg,#141414,#0f0f0f)}
+    .point b{color:var(--gold)}
+    /* Packages */
+    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .plan{padding:18px;border-radius:16px;border:1px solid #212121;background:linear-gradient(180deg,#141414,#0f0f0f);display:flex;flex-direction:column;gap:12px;position:relative;overflow:hidden}
+    .plan .tag{position:absolute;top:12px;right:-40px;rotate:-12deg;background:var(--gold);color:#111;padding:6px 60px;font-weight:800;letter-spacing:.5px}
+    .price{font-size:28px;font-weight:800;color:var(--gold)}
+    .feat{display:flex;gap:10px;align-items:flex-start;color:var(--muted)}
+    .feat svg{flex:0 0 18px;margin-top:3px}
+    .plan .foot{margin-top:auto}
+    /* Gallery-esque image */
+    .iphone-shot{aspect-ratio:4/3;border-radius:16px;border:1px solid #1f1f1f;background:
+      linear-gradient(180deg,#0f0f0f,#0a0a0a);display:grid;place-items:center;color:#888}
+    /* Testimonials */
+    .testis{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .t{padding:16px;border:1px solid #1e1e1e;border-radius:16px;background:linear-gradient(180deg,#131313,#0e0e0e)}
+    .t .who{margin-top:10px;color:var(--muted);font-weight:600}
+    /* Booking */
+    form{display:grid;gap:12px}
+    .row{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+    input,select,textarea{
+      width:100%;padding:12px 14px;border-radius:12px;border:1px solid #222;background:#0f0f0f;color:var(--text);outline:none
+    }
+    textarea{min-height:110px;resize:vertical}
+    .help{color:#aaaaaa;font-size:.9rem}
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .contact-card{padding:14px;border:1px solid #1e1e1e;border-radius:14px;background:linear-gradient(180deg,#141414,#0f0f0f)}
+    .contact-card .label{color:var(--muted);font-size:.9rem}
+    .socials{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    /* Footer */
+    footer{border-top:1px solid #1b1b1b;padding:22px 24px;color:#bdbdbd;text-align:center}
+    /* Responsive */
+    @media (max-width: 960px){
+      .hero .wrap{grid-template-columns:1fr}
+      .about .points{grid-template-columns:1fr 1fr}
+      .pricing{grid-template-columns:1fr;gap:14px}
+      .testis{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr 1fr}
+      .row{grid-template-columns:1fr}
+    }
+    @media (max-width: 520px){
+      .about .points{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <!-- Replace src with your uploaded logo path -->
+        <img src="logo-reelratha.png" alt="ReelRatha logo" />
+        <div class="name">ReelRatha</div>
+      </div>
+      <nav class="links">
+        <a href="#about">About</a>
+        <a href="#packages">Packages</a>
+        <a href="#feedback">Feedback</a>
+        <a href="#booking">Book Now</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="wrap">
+        <div class="card">
+          <div class="badges">
+            <span class="pill">🎥 Instant Reels</span>
+            <span class="pill">🍰 Event • Wedding • Brand</span>
+            <span class="pill">📍 Hyderabad</span>
+          </div>
+          <h1>Instant Reels, Instant Memories</h1>
+          <p class="lede">We shoot on iPhone and deliver the final reel the <b style="color:var(--gold)">same day</b>. Perfect for events, weddings, parties, concerts, store launches & more.</p>
+          <div class="cta">
+            <a class="btn gold" href="#booking">Book Your Slot</a>
+            <a class="btn ghost" href="https://instagram.com/reelratha" target="_blank" rel="noopener">View Instagram</a>
+          </div>
+        </div>
+
+        <div class="iphone-shot card">
+          <!-- You can swap this with a hero photo or reel thumbnail -->
+          <div>
+            <div style="text-align:center;font-weight:700;margin-bottom:6px">Shot on iPhone • Delivered Same Day</div>
+            <div style="text-align:center;color:#bdbdbd">Drop in your best still here</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="hdr">
+        <h2>About ReelRatha</h2>
+        <span class="pill">Trusted by Hyderabad creators</span>
+      </div>
+      <p class="lede">We’re a Hyderabad-based instant reel team. Our edge is speed + taste: crisp iPhone footage, snappy edits, and delivery before the buzz fades.</p>
+      <div class="points">
+        <div class="point"><b>⏱️ Same-Day Delivery</b><br/>We shoot, edit, and deliver within hours so your moment trends while it’s hot.</div>
+        <div class="point"><b>📱 iPhone Workflow</b><br/>Light, fast, agile—perfect for candid energy and on-the-go events.</div>
+        <div class="point"><b>🎯 Clean Storytelling</b><br/>Hook in 3 secs, highlight the vibe, end on a share-worthy beat.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section id="packages">
+    <div class="container">
+      <div class="hdr">
+        <h2>Packages</h2>
+        <a class="btn" href="#booking">Need help choosing? Book a call →</a>
+      </div>
+
+      <!--
+        If you have a PDF with exact package names & prices (ReelRatha_Packages.pdf),
+        just replace the plan titles, prices, and features below.
+      -->
+      <div class="pricing">
+        <article class="plan">
+          <div class="tag">Popular</div>
+          <h3>Quick Reel</h3>
+          <div class="price">₹3,999</div>
+          <div class="feat">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#d4af37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            1 reel (up to 30 sec), single location
+          </div>
+          <div class="feat">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#d4af37" stroke-width="2" /></svg>
+            Same-day edit & delivery
+          </div>
+          <div class="feat">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#d4af37" stroke-width="2" /></svg>
+            1 music sync, 1 revision
+          </div>
+          <div class="foot">
+            <a href="#booking" class="btn gold">Book Quick Reel</a>
+          </div>
+        </article>
+
+        <article class="plan">
+          <h3>Event Pack</h3>
+          <div class="price">₹7,999</div>
+          <div class="feat"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#d4af37" stroke-width="2"/></svg>2 reels (30–45 sec each)</div>
+          <div class="feat"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#d4af37" stroke-width="2"/></svg>Multi-angle iPhone coverage</div>
+          <div class="feat"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#d4af37" stroke-width="2"/></svg>Color pass + captions</div>
+          <div class="feat"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#d4af37" stroke-width="2"/></svg>2 revisions</div>
+          <div class="foot"><a href="#booking" class="btn">Book Event Pack</a></div>
+        </article>
+
+        <article class="plan">
+          <h3>Premium Day</h3>
+          <div class="price">₹12,999</div>
+          <div class="feat"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#d4af37" stroke-width="2"/></svg>Up to 4 reels (mix of 15–45 sec)</div>
+          <div class="feat"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#d4af37" stroke-width="2"/></svg>Creative direction & hooks</div>
+          <div class="feat"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#d4af37" stroke-width="2"/></svg>On-site rough cuts + approvals</div>
+          <div class="feat"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#d4af37" stroke-width="2"/></svg>Priority delivery</div>
+          <div class="foot"><a href="#booking" class="btn">Book Premium Day</a></div>
+        </article>
+      </div>
+
+      <p class="help">Note: Travel within Hyderabad included. Outstation travel & special gear billed separately. GST additional if applicable.</p>
+    </div>
+  </section>
+
+  <!-- FEEDBACK -->
+  <section id="feedback">
+    <div class="container">
+      <div class="hdr">
+        <h2>Client Feedback</h2>
+        <span class="pill">Names shown in Telugu</span>
+      </div>
+      <div class="testis">
+        <div class="t">
+          “ఎవెంట్ పూర్తయ్యేలోపు మా రీల్ రెడీ! ఎడిట్స్ చాలా క్లియర్‌గా, బీట్‌కు పర్ఫెక్ట్‌గా ఉన్నాయి.”
+          <div class="who">— అనుష రెడ్డి</div>
+        </div>
+        <div class="t">
+          “క్రౌడ్ ఎనర్జీని బాగానే క్యాప్చర్ చేశారు. అదే రోజు డెలివరీ—సూపర్ కన్వీనియెంట్.”
+          <div class="who">— సాయి తేజ</div>
+        </div>
+        <div class="t">
+          “హుక్స్, ట్రాన్సిషన్స్, కలర్ టోన్ అన్నీ టాప్-నాచ్. డిఫినిట్‌గా రికమెండ్ చేస్తాను.”
+          <div class="who">— కీర్తనా</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING FORM -->
+  <section id="booking">
+    <div class="container">
+      <div class="hdr">
+        <h2>Book Your Shoot</h2>
+        <span class="pill">We’ll reply on WhatsApp</span>
+      </div>
+
+      <div class="card" style="padding:18px">
+        <form id="bookForm">
+          <div class="row">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your full name" required />
+            </div>
+            <div>
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" placeholder="+91…" required />
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="event">Event Type</label>
+              <input id="event" name="event" type="text" placeholder="Wedding, Party, Launch…" required />
+            </div>
+            <div>
+              <label for="date">Event Date</label>
+              <input id="date" name="date" type="date" required />
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="package">Package</label>
+              <select id="package" name="package" required>
+                <option value="" disabled selected>Select a package</option>
+                <option>Quick Reel — ₹3,999</option>
+                <option>Event Pack — ₹7,999</option>
+                <option>Premium Day — ₹12,999</option>
+              </select>
+            </div>
+            <div>
+              <label for="location">Location</label>
+              <input id="location" name="location" type="text" placeholder="Hyderabad / Venue name" required />
+            </div>
+          </div>
+
+          <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Share timing, vibe reference links, or special notes…"></textarea>
+          </div>
+
+          <div class="row" style="align-items:center">
+            <div class="help">Submitting opens WhatsApp chat with your details pre-filled.</div>
+            <div style="text-align:right">
+              <button type="submit" class="btn gold">Send on WhatsApp</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="hdr">
+        <h2>Contact</h2>
+        <span class="pill">Hyderabad • Available 7 days</span>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="label">Email</div>
+          <div><a href="mailto:reelratha@gmail.com">reelratha@gmail.com</a></div>
+        </div>
+        <div class="contact-card">
+          <div class="label">WhatsApp</div>
+          <div><a href="https://wa.me/919346299036" target="_blank" rel="noopener">+91 93462 99036</a></div>
+        </div>
+        <div class="contact-card">
+          <div class="label">Instagram</div>
+          <div><a href="https://instagram.com/reelratha" target="_blank" rel="noopener">@reelratha</a></div>
+        </div>
+        <div class="contact-card">
+          <div class="label">LinkedIn</div>
+          <div><a href="https://www.linkedin.com/in/reelratha" target="_blank" rel="noopener">reelratha</a></div>
+        </div>
+      </div>
+
+      <div class="socials">
+        <a class="btn" href="https://instagram.com/reelratha" target="_blank" rel="noopener">Instagram</a>
+        <a class="btn" href="https://wa.me/919346299036" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn" href="mailto:reelratha@gmail.com">Email</a>
+        <!-- Add more socials using the same username -->
+        <a class="btn" href="https://www.facebook.com/reelratha" target="_blank" rel="noopener">Facebook</a>
+        <a class="btn" href="https://www.youtube.com/@reelratha" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 ReelRatha — Instant Reels, Instant Memories • Shot on iPhone • Hyderabad
+  </footer>
+
+  <!-- Minimal JS: WhatsApp booking -->
+  <script>
+    const form = document.getElementById('bookForm');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      const lines = [
+        'New Booking Request — ReelRatha',
+        '-------------------------------',
+        `Name: ${data.name || ''}`,
+        `Phone: ${data.phone || ''}`,
+        `Event: ${data.event || ''}`,
+        `Date: ${data.date || ''}`,
+        `Package: ${data.package || ''}`,
+        `Location: ${data.location || ''}`,
+        `Message: ${data.message || ''}`
+      ];
+      const text = encodeURIComponent(lines.join('\n'));
+      const phone = '919346299036'; // your WhatsApp number in intl format without +
+      const url = `https://wa.me/${phone}?text=${text}`;
+      window.open(url, '_blank');
+    });
+  </script>
+</body>
+</html>
